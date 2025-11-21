@@ -1,0 +1,17 @@
+# Ignore large datasets
+datasets/raw/
+datasets/clean/
+
+# Ignore Python venv
+venv/
+
+# Logs / temporary files
+*.log
+*.tmp
+*.crc
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
