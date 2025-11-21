@@ -1,16 +1,26 @@
-# Ignore large datasets
+# Ignore raw big datasets
 datasets/raw/
-datasets/clean/
+datasets/raw/*
+datasets/raw/*.csv
+datasets/raw/*.jsonl
 
-# Ignore Python venv
-venv/
-
-# Logs / temporary files
+# Ignore any Hive/warehouse/metastore noise
+warehouse/
+metastore_db/
+derby.log
 *.log
-*.tmp
-*.crc
+
+# Ignore Python junk
+venv/
 __pycache__/
 *.pyc
+
+# Ignore Hadoop checksum junk if they ever appear
+*.crc
+*.eventlog
+
+# Node modules (if UI team puts frontend inside this repo)
+ui/node_modules/
 
 # OS files
 .DS_Store
