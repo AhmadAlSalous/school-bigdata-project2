@@ -43,31 +43,33 @@ Parquet improves compression + analytics performance
 The API exposes data for any UI/dashboard system
 
 2️⃣ Technical Architecture
+```
                      ┌────────────────────────┐
                      │   Raw Data (CSV/JSON)  │
                      └─────────────┬──────────┘
                                    ▼
-                    ┌───────────────────────────┐
-                    │  HDFS Data Lake (Raw Zone) │
-                    └─────────────┬─────────────┘
+                    ┌─────────────────────────────┐
+                    │  HDFS Data Lake (Raw Zone)  │
+                    └─────────────┬───────────────┘
                                    ▼
                     ┌───────────────────────────┐
                     │ Hive Clean Zone (Parquet) │
                     └─────────────┬─────────────┘
                                    ▼
                     ┌───────────────────────────┐
-                    │     Star Schema Tables     │
-                    │ dim_students / dim_date…   │
-                    │ fact_attendance            │
+                    │     Star Schema Tables    │
+                    │ dim_students / dim_date…  │
+                    │ fact_attendance           │
                     └─────────────┬─────────────┘
                                    ▼
                  ┌──────────────────────────────────┐
-                 │   Flask Backend (REST API)        │
+                 │   Flask Backend (REST API)       │
                  └─────────────┬────────────────────┘
                                    ▼
                  ┌──────────────────────────────────┐
-                 │  Frontend Dashboard (UI Team)     │
+                 │  Frontend Dashboard (UI Team)    │
                  └──────────────────────────────────┘
+```
 
 3️⃣ Dataset Description
 
@@ -136,12 +138,18 @@ Fact table links all dimensions using foreign keys.
 5️⃣ Backend API (Flask)
 
 Backend code is in:
-backend/app.py
+`backend/app.py`
 
 install dependencies
+```
 python3 -m venv venv
+```
+```
 source venv/bin/activate
+```
+```
 pip install -r backend/requirements-min.txt
+```
 
 Run server
 python backend/app.py
@@ -164,20 +172,30 @@ You do not need Hadoop or Hive.
 You only need the CSVs and the Flask API.
 
 🔧 Step 1: Clone the project
-git clone https://github.com/AhmadAlSalous/school-bigdata-project2.git
-cd school-bigdata-project2
+```git clone https://github.com/AhmadAlSalous/school-bigdata-project2.git```
+```cd school-bigdata-project2```
 
 🧰 Step 2: Create a virtual environment
-Linux / macOS
+### Linux / macOS
+```
 python3 -m venv venv
+```
+```
 source venv/bin/activate
+```
 
-Windows (PowerShell)
+### Windows (PowerShell)
+```
 python -m venv venv
+```
+```
 venv\Scripts\activate
+```
 
 📦 Step 3: Install API dependencies
+```
 pip install -r backend/requirements-min.txt
+```
 
 
 Files included:
@@ -207,7 +225,9 @@ fact_attendance.csv
 If not → tell Ahmad to re-commit them.
 
 ▶️ Step 5: Start the backend API
+```
 python backend/app.py
+```
 
 
 You should see:
@@ -260,6 +280,7 @@ Student-detail pages
 Everything the UI needs comes from the API.
 
 7️⃣ Project File Structure
+```
 school-bigdata-project2/
 │
 ├── backend/
@@ -277,6 +298,7 @@ school-bigdata-project2/
 ├── generate_data.py
 ├── README.md
 └── .gitignore
+```
 
 8️⃣ Lessons Learned
 
